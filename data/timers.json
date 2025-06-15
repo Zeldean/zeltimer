@@ -1,0 +1,121 @@
+[
+  {
+    "id": 1,
+    "title": "Client Meeting",
+    "sessions": [
+      {
+        "title": "Preparation",
+        "start": "2025-06-07T15:38",
+        "stop": "2025-06-07T15:40",
+        "duration_seconds": 120
+      },
+      {
+        "title": "DBD381 Note Making",
+        "start": "2025-06-07T15:40",
+        "stop": "2025-06-07T15:42",
+        "duration_seconds": 120
+      },
+      {
+        "title": "Preparation",
+        "start": "2025-06-07T15:38",
+        "stop": "2025-06-07T15:40",
+        "duration_seconds": 120
+      },
+      {
+        "title": "DBD381 Note Making",
+        "start": "2025-06-07T15:40",
+        "stop": "2025-06-07T15:42",
+        "duration_seconds": 120
+      },
+      {
+        "title": "Preparation",
+        "start": "2025-06-07T15:38",
+        "stop": "2025-06-07T15:40",
+        "duration_seconds": 120
+      },
+      {
+        "title": "DBD381 Note Making",
+        "start": "2025-06-07T15:40",
+        "stop": "2025-06-07T15:42",
+        "duration_seconds": 120
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Study",
+    "sessions": [
+      {
+        "title": "DBD381 Note Making",
+        "start": "2025-06-07T15:42",
+        "stop": "2025-06-07T15:49",
+        "duration_seconds": 420
+      },
+      {
+        "title": "DBD381 Note Making",
+        "start": "2025-06-07T16:31",
+        "stop": "2025-06-07T18:01",
+        "duration_seconds": 5400
+      },
+      {
+        "title": "DBD381 Note Making",
+        "start": "2025-06-07T18:09",
+        "stop": "2025-06-07T18:18",
+        "duration_seconds": 540
+      },
+      {
+        "title": "DBD381 Note Making",
+        "start": "2025-06-07T15:42",
+        "stop": "2025-06-07T15:49",
+        "duration_seconds": 420
+      },
+      {
+        "title": "DBD381 Note Making",
+        "start": "2025-06-07T16:31",
+        "stop": "2025-06-07T18:01",
+        "duration_seconds": 5400
+      },
+      {
+        "title": "DBD381 Note Making",
+        "start": "2025-06-07T18:09",
+        "stop": "2025-06-07T18:18",
+        "duration_seconds": 540
+      },
+      {
+        "title": "WPR381",
+        "start": "2025-06-07T18:18",
+        "stop": "2025-06-07T19:48",
+        "duration_seconds": 5400
+      },
+      {
+        "title": "DBD381 Note Making",
+        "start": "2025-06-07T15:42",
+        "stop": "2025-06-07T15:49",
+        "duration_seconds": 420
+      },
+      {
+        "title": "DBD381 Note Making",
+        "start": "2025-06-07T16:31",
+        "stop": "2025-06-07T18:01",
+        "duration_seconds": 5400
+      },
+      {
+        "title": "DBD381 Note Making",
+        "start": "2025-06-07T18:09",
+        "stop": "2025-06-07T18:18",
+        "duration_seconds": 540
+      },
+      {
+        "title": "WPR381",
+        "start": "2025-06-07T18:18",
+        "stop": "2025-06-07T19:48",
+        "duration_seconds": 5400
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Codeing Session",
+    "sessions": []
+  }
+]
