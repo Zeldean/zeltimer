@@ -1,1 +1,44 @@
-.venv
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# MacOS
+.DS_Store
+
+# Logs and data files
+data/log.txt
+data/timers.json
+
+# Test cache
+.pytest_cache/
+coverage/
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+*.egg
+
+# Installer cache
+pip-wheel-metadata/
+
+# System files
+*.bak
+*.tmp
+
+# Optional: ignore system-wide pyenv / poetry stuff
+.python-version

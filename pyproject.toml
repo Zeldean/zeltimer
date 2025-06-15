@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "zeltimer"
+version = "0.1.0"
+description = "Terminal time tracker with pomodoro support"
+authors = [{ name="Zeldean" }]
+license = { text = "MIT" }
+requires-python = ">=3.10"
+dependencies = []
+
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Intended Audience :: Developers",
+  "Topic :: Utilities",
+  "Development Status :: 3 - Alpha"
+]
+
+[project.scripts]
+zeltimer = "zeltimer.app:main"
