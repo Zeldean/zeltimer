@@ -1,0 +1,9 @@
+[
+    {
+        "id": 1,
+        "name": "Study Session",
+        "sessions": [],
+        "total_time": 0,
+        "archived": false
+    }
+]

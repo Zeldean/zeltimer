@@ -21,4 +21,4 @@ classifiers = [
 ]
 
 [project.scripts]
-zeltimer = "zeltimer.app:main"
+zeltimer = "zeltimer.app:cli"
