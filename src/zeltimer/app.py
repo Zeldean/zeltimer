@@ -77,6 +77,14 @@ def status(timer_id):
         for t in visible:
             display_timer(t)
 
+@cli.command()
+@click.argument("timer_id", type=int)
+def pomoTest(timer_id):
+    """Run Pomodoro test with the given timer ID"""
+    print("Pomodoro test Started.")
+    utils.runPomo(timer_id);
+    
+
 # Entry point
 if __name__ == "__main__":
     cli()

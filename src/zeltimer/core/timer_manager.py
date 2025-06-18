@@ -17,6 +17,11 @@ def new_timer(timer_name="New Timer"):
     new_timer = {
         "id": new_id,
         "name": timer_name,
+        "pomodoro": {
+            "cycles": 4,
+            "work_time": 25,
+            "break_time": 5
+        },
         "sessions": [],
         "total_time": 0,
         "archived": False
@@ -49,6 +54,20 @@ def start_timer(timer_id, session_name):
     logs_append.append([str(timer_id), log_time, "Start", session_name])
 
     log(logs_append)
+    print(f"Timer {timer_id} started.")
+
+def start_pomodoro(timer_id, session_name):
+    logs = get_logs()
+    filtered_logs = [log for log in logs if log[0] == str(timer_id)]
+    logs_append = []
+    log_time = datetime.datetime.now().isoformat(timespec="seconds")
+
+    if filtered_logs and filtered_logs[-1][2] == "Start":
+        logs_append.append([str(timer_id), log_time, "Stop"])
+    logs_append.append([str(timer_id), log_time, "Start", session_name])
+
+    log(logs_append)
+    print(f"Timer {timer_id} started.")
 
 def stop_timer(timer_id):
     logs = get_logs()
