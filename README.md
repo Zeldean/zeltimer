@@ -1,29 +1,27 @@
-# ⏱️ Terminal Time Tracker
+# ⏱️ Zeltimer – Terminal Time Tracker
 
-A simple yet powerful CLI tool for tracking multiple timers and recording session data. Designed for time tracking in meetings, work sessions, study blocks, or projects — right from your terminal.
+A simple yet powerful CLI tool for tracking multiple timers and recording session data. Designed for time tracking in study blocks, work sessions, meetings, or projects — right from your terminal.
 
 ---
 
 ## 📁 Project Structure
 
 ```
-time_tracker/
-├── timer.py                  # Main CLI entry point using Click
-├── commands/                 # CLI command modules
-│   ├── new_timer.py
-│   ├── start_timer.py
-│   ├── stop_timer.py
-│   ├── status_timer.py
-│   └── log_timer.py
-├── core/                     # Core logic and utilities
-│   ├── storage.py            # Handles file paths and JSON I/O
-│   ├── timer_utils.py        # Session and timer logic
-│   └── formatter.py          # Markdown formatting
-├── data/                     # Automatically managed data files
-│   ├── timers.json           # Stores all timers and session history
-│   ├── active_log.txt        # Append-only raw log of Start/Stop events
-│   └── log.md                # Generated Markdown session report
-```
+
+zeltimer/
+├── app.py                      # Main CLI entry point (Click-based)
+├── core/                       # Core logic and utilities
+│   ├── timer\_manager.py        # Timer + session logic and logging
+│   ├── storage.py              # JSON and log file helpers
+│   └── utils.py                # Formatters and notifications
+├── data/
+│   ├── timers.json             # Structured timer & session history
+│   ├── log.txt                 # Append-only raw log of events
+│   └── log.md                  # Markdown export (optional)
+├── assets/
+│   └── zeltimer\_icon.png       # Icon for notify-send messages
+
+````
 
 ---
 
@@ -32,138 +30,185 @@ time_tracker/
 ### 1. Install dependencies
 
 ```bash
-pip install click
-```
+pip install -e .
+````
+
+Make sure you have `libnotify` installed for desktop notifications (`notify-send`).
+
+---
 
 ### 2. Run the app
 
 ```bash
-python timer.py [COMMAND]
+zeltimer [COMMAND]
 ```
 
 ---
 
 ## ✅ Commands
 
-### `new <title>`
+### `zeltimer new <title>`
 
 Create a new timer with a custom title.
 
 ```bash
-python timer.py new "Client Meeting"
-```
-
-### `start <id> <optional session title>`
-
-Start a new session for the given timer ID. If a session is already active, it auto-inserts a `Stop` **just before** this new start.
-
-```bash
-python timer.py start 1 "Prep Time"
-```
-
-### `stop <id>`
-
-Stops the currently running session (if active).
-
-```bash
-python timer.py stop 1
-```
-
-### `status <id>`
-
-Shows the current status of the timer and elapsed time if it’s running.
-
-```bash
-python timer.py status 1
-```
-
-### `log [--clear]`
-
-Finalizes all active sessions, parses the event log, calculates durations, updates `timers.json`, and writes a summary to `log.md`.
-
-```bash
-python timer.py log --clear
+zeltimer new "Study Timer"
 ```
 
 ---
 
-## 📦 Data File Format
+### `zeltimer start <id> <session title> [--pomodoro]`
 
-### `active_log.txt` (raw log)
+Start a new session.
+
+* If one is already running, it auto-inserts a `Stop`.
+* With `--pomodoro`, starts a Pomodoro-style cycle (see below).
+
+```bash
+zeltimer start 1 "WPR381 Reading"
+zeltimer start 1 "Focused Session" --pomodoro --cycles 4 --work 25 --break 5
+```
+
+---
+
+### `zeltimer stop <id>`
+
+Stops the running session for the given timer.
+
+```bash
+zeltimer stop 1
+```
+
+---
+
+### `zeltimer resume <id>`
+
+Resumes the last session title of the given timer.
+
+```bash
+zeltimer resume 1
+```
+
+---
+
+### `zeltimer status [id]`
+
+Show session breakdown for a timer, or all active timers if no ID is given.
+
+```bash
+zeltimer status        # Shows all active timers
+zeltimer status 1      # Shows one timer breakdown
+```
+
+Output looks like:
 
 ```
-1|2025-06-07T14:00|Start|Prep
-1|2025-06-07T15:00|Stop
-1|2025-06-07T15:00|Start|Intro
+Timer 1 - Study Session
+├── MLG382 Recap - 00:04:20
+├── WPR381 - 00:12:17 (running)
+└── Total Time Breakdown:
+Total Time: 00:16:37
 ```
 
-### `timers.json` (structured)
+---
+
+## 📦 Data Format
+
+### `log.txt`
+
+Append-only raw log:
+
+```
+1|2025-06-07T14:00:02|Start|Prep
+1|2025-06-07T15:00:15|Stop
+```
+
+---
+
+### `timers.json`
+
+Structured cache built from log:
 
 ```json
 [
   {
     "id": 1,
-    "title": "Client Meeting",
+    "name": "Study Timer",
     "sessions": [
       {
         "title": "Prep",
-        "start": "2025-06-07T14:00",
-        "stop": "2025-06-07T15:00",
-        "duration_seconds": 3600
+        "start": "2025-06-07T14:00:02",
+        "stop": "2025-06-07T15:00:15",
+        "duration_seconds": 3613
       }
-    ]
+    ],
+    "total_time": 3613,
+    "archived": false
   }
 ]
 ```
 
 ---
 
-## 📝 `log.md` Example Output
+## 🔔 Notifications
 
-```
-# Timer Report
+Zeltimer uses `notify-send` with a custom icon.
 
-## Client Meeting
+### Requirements
 
-| Session       | Start               | Stop                | Duration |
-|---------------|---------------------|---------------------|----------|
-| Prep          | 2025-06-07T14:00    | 2025-06-07T15:00    | 1h 0m    |
-```
-
----
-
-## 🌟 Planned / Optional Features
-
-| Feature       | Description                                     | Status     |
-| ------------- | ----------------------------------------------- | ---------- |
-| `edit <id>`   | Rename a timer                                  | 🔜 Planned |
-| `delete <id>` | Delete a timer and its sessions                 | 🔜 Planned |
-| `list`        | Show all timers with total time + active status | 🔜 Planned |
-| Export CSV    | Export session data to `.csv`                   | 🔜 Planned |
-| Tag Sessions  | Add tags to sessions for filtering              | 🔜 Planned |
-| `export`      | Export all data to `.json` or `.csv`            | 🔜 Planned |
+* `libnotify`
+* Desktop WM that supports notifications (e.g. Hyprland, GNOME, KDE)
 
 ---
 
 ## 🧠 Design Principles
 
-* **Multiple timers** can run independently.
-* Every `Start` is always paired with a `Stop` (auto-inserted if needed).
-* All raw data is kept in `active_log.txt` and parsed on-demand.
-* Structured and readable summaries are saved to `timers.json` and `log.md`.
+* Timers are persistent and can run concurrently
+* Logs are append-only (`log.txt`)
+* `timers.json` is rebuilt from logs on-demand
+* Sessions have optional titles
+* `Start` is always paired with `Stop` (auto if needed)
+
+---
+
+## 🌟 Planned Features
+
+| Feature         | Description                                             | Status     |
+| --------------- | ------------------------------------------------------- | ---------- |
+| Pomodoro mode   | Auto-run start/stop cycles with break notifications     | 🔜 Planned     |
+| `list` command  | Show all timers with active status + time summary       | 🔜 Planned |
+| Session tags    | Add tags to group/filter sessions                       | 🔜 Planned |
+| Markdown export | Save logs as a readable Markdown session report         | 🔜 Planned  |
+| CSV export      | Export all sessions to CSV format                       | 🔜 Planned |
+| Timer rename    | Rename a timer by ID                                    | 🔜 Planned |
+| Archive toggle  | Hide unused timers from status unless explicitly listed | 🔜 Planned     |
+| Curses UI       | Interactive terminal UI for managing timers             | 🔜 Planned |
 
 ---
 
 ## 🛠 Developer Tips
 
-* To test in dev, try:
+Test locally with:
 
 ```bash
-python timer.py new "Example"
-python timer.py start 1 "Session A"
-python timer.py stop 1
-python timer.py start 1 "Session B"
-python timer.py log --clear
+zeltimer new "Test"
+zeltimer start 1 "Reading"
+zeltimer stop 1
+zeltimer status 1
 ```
+
+To test Pomodoro:
+
+```bash
+zeltimer start 1 "Pomodoro" --pomodoro --cycles 2 --work 1 --break 1
+```
+
+---
+
+## 🧩 Credits
+
+Built by **zeldean**
+MIT Licensed
+Logo and icon included in `/assets`
 
 ---

@@ -7,3 +7,5 @@
 2|2025-06-18T15:15:40|Start|zeltimer
 2|2025-06-18T15:20:13|Stop
 2|2025-06-18T15:20:13|Start|Planing zeltimer
+2|2025-06-18T15:49:41|Stop
+2|2025-06-18T16:10:23|Start|Planing zeltimer
