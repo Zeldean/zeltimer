@@ -2,8 +2,47 @@
     {
         "id": 1,
         "name": "Study Session",
-        "sessions": [],
-        "total_time": 0,
+        "sessions": [
+            {
+                "title": "MLG382 Recap",
+                "start": "2025-06-16T14:10:23",
+                "stop": "2025-06-16T14:14:43",
+                "duration_seconds": 260
+            },
+            {
+                "title": "MLG382 Recap",
+                "start": "2025-06-16T14:19:54",
+                "stop": "2025-06-16T15:17:01",
+                "duration_seconds": 3427
+            },
+            {
+                "title": "MLG382 Recap",
+                "start": "2025-06-16T19:51:43",
+                "stop": "2025-06-16T20:00:01",
+                "duration_seconds": 498
+            }
+        ],
+        "total_time": 4185,
+        "archived": false
+    },
+    {
+        "id": 2,
+        "name": "Coding",
+        "sessions": [
+            {
+                "title": "zeltimer",
+                "start": "2025-06-18T15:15:40",
+                "stop": "2025-06-18T15:20:13",
+                "duration_seconds": 273
+            },
+            {
+                "title": "Planing zeltimer",
+                "start": "2025-06-18T15:20:13",
+                "stop": null,
+                "duration_seconds": 0
+            }
+        ],
+        "total_time": 273,
         "archived": false
     }
 ]

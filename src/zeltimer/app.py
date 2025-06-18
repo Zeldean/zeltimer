@@ -1,5 +1,7 @@
 import click
 from zeltimer.core import timer_manager
+from zeltimer.core import utils
+import datetime
 
 @click.group()
 def cli():
@@ -11,6 +13,7 @@ def cli():
 def new(name):
     """Create new timer"""
     timer_manager.new_timer(name)
+    utils.notify("Zeltimer", f"New timer '{name}' created.")
 
 @cli.command()
 @click.argument("timer_id", type=int)
@@ -18,36 +21,61 @@ def new(name):
 def start(timer_id, session_name):
     """Start timer"""
     timer_manager.start_timer(timer_id, session_name)
+    utils.notify("Zeltimer", f"Timer {timer_id} started: {session_name}")
 
 @cli.command()
 @click.argument("timer_id", type=int)
 def stop(timer_id):
     """Stop timer"""
     timer_manager.stop_timer(timer_id)
+    utils.notify("Zeltimer", f"Timer {timer_id} stopped.")
 
 @cli.command()
 @click.argument("timer_id", type=int)
 def resume(timer_id):
     """Resume timer"""
     timer_manager.resume_timer(timer_id)
+    utils.notify("Zeltimer", f"Timer {timer_id} resumed.")
 
 @cli.command()
-@click.argument("timer_id", type=int)
+@click.argument("timer_id", required=False, type=int)
 def status(timer_id):
-    """Show timer time breakdown"""
+    """Show timer time breakdown (single or all timers)"""
+    timer_manager.sync_state()
     timers = timer_manager.load_timers()
-    timer = next((t for t in timers if t["id"] == timer_id), None)
-    if not timer:
-        click.echo(f"Timer ID {timer_id} not found.")
-        return
 
-    click.echo(f"Timer {timer_id} - {timer['name']}")
-    total_minutes = timer["total_time"] // 60
-    click.echo(f"Total Time: {total_minutes} min")
+    def display_timer(timer):
+        click.echo(f"\nTimer {timer['id']} - {timer['name']}")
+        total_seconds = timer["total_time"]
 
-    for i, session in enumerate(timer["sessions"], 1):
-        minutes = session["duration_seconds"] // 60
-        click.echo(f"├── {session['title']} - {minutes} min")
+        for session in timer["sessions"]:
+            if session["stop"]:
+                dur = session["duration_seconds"]
+                live = ""
+            else:
+                start = datetime.datetime.fromisoformat(session["start"])
+                dur = (datetime.datetime.now() - start).total_seconds()
+                live = " (running)"
+                total_seconds += dur
+
+            click.echo(f"├── {session['title']} - {utils.timeBreakdown(dur)}{live}")
+
+        click.echo(f"Total Time: {utils.timeBreakdown(total_seconds)}")
+
+    if timer_id:
+        timer = next((t for t in timers if t["id"] == timer_id), None)
+        if not timer:
+            click.echo(f"Timer ID {timer_id} not found.")
+            utils.notify("Zeltimer", f"Timer {timer_id} not found.")
+            return
+        display_timer(timer)
+    else:
+        visible = [t for t in timers if not t.get("archived", False)]
+        if not visible:
+            click.echo("No active timers found.")
+            return
+        for t in visible:
+            display_timer(t)
 
 # Entry point
 if __name__ == "__main__":

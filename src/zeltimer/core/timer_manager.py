@@ -42,7 +42,7 @@ def start_timer(timer_id, session_name):
     logs = get_logs()
     filtered_logs = [log for log in logs if log[0] == str(timer_id)]
     logs_append = []
-    log_time = datetime.datetime.now().isoformat(timespec="minutes")
+    log_time = datetime.datetime.now().isoformat(timespec="seconds")
 
     if filtered_logs and filtered_logs[-1][2] == "Start":
         logs_append.append([str(timer_id), log_time, "Stop"])
@@ -64,7 +64,7 @@ def stop_timer(timer_id):
         print(f"Timer {timer_id} is already stopped.")
         return
 
-    log_time = datetime.datetime.now().isoformat(timespec="minutes")
+    log_time = datetime.datetime.now().isoformat(timespec="seconds")
     logs_append = [[str(timer_id), log_time, "Stop"]]
 
     log(logs_append)
@@ -81,7 +81,7 @@ def resume_timer(timer_id):
         print(f"Timer {timer_id} is already running.")
         return
 
-    log_time = datetime.datetime.now().isoformat(timespec="minutes")
+    log_time = datetime.datetime.now().isoformat(timespec="seconds")
     logs_append = [[str(timer_id), log_time, "Start", session_name]]
     log(logs_append)
     print(f"Resumed timer {timer_id} with session: {session_name}")
@@ -169,7 +169,7 @@ def build_state_from_log():
         if action == "Start":
             timer["sessions"].append({
                 "title": title,
-                "start": timestamp.isoformat(timespec="minutes"),
+                "start": timestamp.isoformat(timespec="seconds"),
                 "stop": None,
                 "duration_seconds": 0
             })
@@ -177,7 +177,7 @@ def build_state_from_log():
             if timer["sessions"]:
                 current = timer["sessions"][-1]
                 if current["stop"] is None:
-                    current["stop"] = timestamp.isoformat(timespec="minutes")
+                    current["stop"] = timestamp.isoformat(timespec="seconds")
                     delta = (datetime.datetime.fromisoformat(current["stop"]) - datetime.datetime.fromisoformat(current["start"])).total_seconds()
                     current["duration_seconds"] = int(delta)
                     timer["total_time"] += int(delta)
@@ -193,4 +193,3 @@ def sync_state():
     """
     state = build_state_from_log()
     save_timers(state)
-    print("State synced from log.txt into timers.json")
