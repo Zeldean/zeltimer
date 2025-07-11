@@ -120,6 +120,14 @@ def save_timers(timers):
     with open(TIMER_PATH, "w") as f:
         json.dump(timers, f, indent=4)
 
+def create_save():
+    # meant to store the timers in a more permanant json file save.json and then clear the log.txt should only be able to save stoped timers
+    print(".")
+
+def load_save():
+    # meant to load the save.json file content into the timers.json file and then work on timers as normal need to be loaded before any other operations on timers.json becuse it sessions list is cleard on status call
+    print(".")
+
 def get_logs():
     if not LOG_PATH.exists():
         return []

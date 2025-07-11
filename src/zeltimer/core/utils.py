@@ -43,3 +43,11 @@ def runPomo(timer_id):
 def totulDuration(cycle):
     
     return cycle*2
+
+def alarm(alarm_time):
+    """Play an alarm sound."""
+    while datetime.datetime.now() < alarm_time:
+        # Wait until the alarm time is reached
+        continue
+    subprocess.run(["paplay", r"/home/zeldean/Media/aud/Muisic/Out/brennan_savage_bulletproof.mp3"])
+    notify("Zeltimer", "🔔 Alarm! Time's up!")

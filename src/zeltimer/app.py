@@ -1,5 +1,6 @@
 import click
 from zeltimer.core import timer_manager
+from zeltimer.core.alarm import alarm
 from zeltimer.core import utils
 import datetime
 
@@ -83,6 +84,11 @@ def pomoTest(timer_id):
     """Run Pomodoro test with the given timer ID"""
     print("Pomodoro test Started.")
     utils.runPomo(timer_id);
+
+@cli.command()
+@click.argument("alarm_time", type=str)
+def set_alarm(alarm_time):
+    alarm(alarm_time)
     
 
 # Entry point

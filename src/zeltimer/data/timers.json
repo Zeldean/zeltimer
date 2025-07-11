@@ -1,39 +1,43 @@
 [
     {
         "id": 1,
-        "name": "Study Session",
+        "name": "Genral",
         "pomodoro": {
-            "enabled": true,
             "cycles": 4,
-            "work_duration": 1500,
-            "break_duration": 300
+            "work_time": 25,
+            "break_time": 5
         },
         "sessions": [
             {
-                "title": "MLG382 Recap",
-                "start": "2025-06-16T14:10:23",
-                "stop": "2025-06-16T14:14:43",
-                "duration_seconds": 260
+                "title": "Reghardt Inventor",
+                "start": "2025-06-20T23:06:04",
+                "stop": "2025-06-21T02:36:33",
+                "duration_seconds": 12629
             },
             {
-                "title": "MLG382 Recap",
-                "start": "2025-06-16T14:19:54",
-                "stop": "2025-06-16T15:17:01",
-                "duration_seconds": 3427
+                "title": "Reghardt Inventor",
+                "start": "2025-06-21T22:34:20",
+                "stop": "2025-06-21T22:39:41",
+                "duration_seconds": 321
             },
             {
-                "title": "MLG382 Recap",
-                "start": "2025-06-16T19:51:43",
-                "stop": "2025-06-16T20:00:01",
-                "duration_seconds": 498
+                "title": "Hello",
+                "start": "2025-07-01T11:36:54",
+                "stop": "2025-07-01T18:00:47",
+                "duration_seconds": 23033
             }
         ],
-        "total_time": 4185,
+        "total_time": 35983,
         "archived": false
     },
     {
         "id": 2,
         "name": "Coding",
+        "pomodoro": {
+            "cycles": 4,
+            "work_time": 25,
+            "break_time": 5
+        },
         "sessions": [
             {
                 "title": "zeltimer",
@@ -64,14 +68,20 @@
                 "start": "2025-06-18T18:22:03",
                 "stop": "2025-06-18T19:08:40",
                 "duration_seconds": 2797
+            },
+            {
+                "title": "Mikado QuoteMaker",
+                "start": "2025-07-01T16:43:21",
+                "stop": "2025-07-01T18:00:15",
+                "duration_seconds": 4614
             }
         ],
-        "total_time": 8006,
+        "total_time": 12620,
         "archived": false
     },
     {
         "id": 3,
-        "name": "Test Pomo",
+        "name": "Test",
         "pomodoro": {
             "cycles": 4,
             "work_time": 25,
@@ -152,6 +162,449 @@
             }
         ],
         "total_time": 672,
+        "archived": false
+    },
+    {
+        "id": 4,
+        "name": "Exam Prep",
+        "pomodoro": {
+            "cycles": 4,
+            "work_time": 25,
+            "break_time": 5
+        },
+        "sessions": [
+            {
+                "title": "MLG382 Recap",
+                "start": "2025-06-16T14:10:23",
+                "stop": "2025-06-16T14:14:43",
+                "duration_seconds": 260
+            },
+            {
+                "title": "MLG382 Recap",
+                "start": "2025-06-16T14:19:54",
+                "stop": "2025-06-16T15:17:01",
+                "duration_seconds": 3427
+            },
+            {
+                "title": "MLG382 Recap",
+                "start": "2025-06-16T19:51:43",
+                "stop": "2025-06-16T20:00:01",
+                "duration_seconds": 498
+            },
+            {
+                "title": "PMM381 Gizmo",
+                "start": "2025-06-19T12:10:04",
+                "stop": "2025-06-19T12:45:13",
+                "duration_seconds": 2109
+            },
+            {
+                "title": "DBD381 Gizmo",
+                "start": "2025-06-19T16:51:58",
+                "stop": "2025-06-19T18:00:35",
+                "duration_seconds": 4117
+            },
+            {
+                "title": "DBD381 Gizmo",
+                "start": "2025-06-19T18:10:38",
+                "stop": "2025-06-19T18:35:25",
+                "duration_seconds": 1487
+            },
+            {
+                "title": "MLG381 Slides",
+                "start": "2025-06-19T18:35:25",
+                "stop": "2025-06-19T18:45:13",
+                "duration_seconds": 588
+            },
+            {
+                "title": "MLG381 Slides",
+                "start": "2025-06-19T18:47:08",
+                "stop": "2025-06-19T20:13:14",
+                "duration_seconds": 5166
+            },
+            {
+                "title": "MLG381 Slides",
+                "start": "2025-06-19T21:23:48",
+                "stop": "2025-06-19T23:12:24",
+                "duration_seconds": 6516
+            },
+            {
+                "title": "MLG381 Slides",
+                "start": "2025-06-19T23:24:41",
+                "stop": "2025-06-20T00:51:13",
+                "duration_seconds": 5192
+            },
+            {
+                "title": "DBD381 Gizmo",
+                "start": "2025-06-20T20:10:06",
+                "stop": "2025-06-20T20:29:05",
+                "duration_seconds": 1139
+            },
+            {
+                "title": "MLG381 Slides",
+                "start": "2025-06-21T14:50:06",
+                "stop": "2025-06-21T15:47:44",
+                "duration_seconds": 3458
+            },
+            {
+                "title": "MLG381 Slides",
+                "start": "2025-06-21T15:56:34",
+                "stop": "2025-06-21T16:28:23",
+                "duration_seconds": 1909
+            },
+            {
+                "title": "MLG381 Slides",
+                "start": "2025-06-21T18:51:28",
+                "stop": "2025-06-21T20:58:41",
+                "duration_seconds": 7633
+            },
+            {
+                "title": "MLG381 Slides",
+                "start": "2025-06-21T22:24:36",
+                "stop": "2025-06-21T23:31:39",
+                "duration_seconds": 4023
+            },
+            {
+                "title": "MLG381 Slides",
+                "start": "2025-06-22T00:39:26",
+                "stop": "2025-06-22T00:56:32",
+                "duration_seconds": 1026
+            },
+            {
+                "title": "MLG381 Slides",
+                "start": "2025-06-22T15:28:57",
+                "stop": "2025-06-22T18:03:12",
+                "duration_seconds": 9255
+            },
+            {
+                "title": "PMM381 Notes",
+                "start": "2025-06-24T13:33:12",
+                "stop": "2025-06-24T14:10:49",
+                "duration_seconds": 2257
+            },
+            {
+                "title": "PMM381 Notes",
+                "start": "2025-06-24T17:12:57",
+                "stop": "2025-06-24T17:42:24",
+                "duration_seconds": 1767
+            },
+            {
+                "title": "PMM381 Notes",
+                "start": "2025-06-24T18:07:29",
+                "stop": "2025-06-24T20:02:58",
+                "duration_seconds": 6929
+            },
+            {
+                "title": "PMM381 Notes",
+                "start": "2025-06-24T22:45:19",
+                "stop": "2025-06-24T23:06:22",
+                "duration_seconds": 1263
+            },
+            {
+                "title": "PMM381 Notes",
+                "start": "2025-06-25T00:12:47",
+                "stop": "2025-06-25T00:57:32",
+                "duration_seconds": 2685
+            },
+            {
+                "title": "DBD381 Notes",
+                "start": "2025-06-26T14:48:54",
+                "stop": "2025-06-26T15:00:27",
+                "duration_seconds": 693
+            },
+            {
+                "title": "DBD381 Notes",
+                "start": "2025-06-26T15:01:44",
+                "stop": "2025-06-26T16:27:47",
+                "duration_seconds": 5163
+            },
+            {
+                "title": "DBD381 Notes",
+                "start": "2025-06-26T20:15:48",
+                "stop": "2025-06-26T21:05:26",
+                "duration_seconds": 2978
+            },
+            {
+                "title": "DBD381 Notes",
+                "start": "2025-06-26T23:21:41",
+                "stop": "2025-06-27T00:14:07",
+                "duration_seconds": 3146
+            }
+        ],
+        "total_time": 84684,
+        "archived": false
+    },
+    {
+        "id": 5,
+        "name": "weedT+",
+        "pomodoro": {
+            "cycles": 4,
+            "work_time": 25,
+            "break_time": 5
+        },
+        "sessions": [
+            {
+                "title": "hybrid",
+                "start": "2025-06-21T02:37:17",
+                "stop": "2025-06-21T03:56:22",
+                "duration_seconds": 4745
+            },
+            {
+                "title": "hybrid_2",
+                "start": "2025-06-21T03:56:22",
+                "stop": "2025-06-21T04:26:12",
+                "duration_seconds": 1790
+            },
+            {
+                "title": "Hybrid",
+                "start": "2025-06-28T18:42:26",
+                "stop": "2025-06-29T00:48:02",
+                "duration_seconds": 21936
+            }
+        ],
+        "total_time": 28471,
+        "archived": false
+    },
+    {
+        "id": 6,
+        "name": "Quote Maker",
+        "pomodoro": {
+            "cycles": 4,
+            "work_time": 25,
+            "break_time": 5
+        },
+        "sessions": [
+            {
+                "title": "Backlog",
+                "start": "2025-05-04T00:00:00",
+                "stop": "2025-05-04T10:00:00",
+                "duration_seconds": 36000
+            },
+            {
+                "title": "Planing",
+                "start": "2025-06-29T15:11:42",
+                "stop": "2025-06-29T15:28:47",
+                "duration_seconds": 1025
+            },
+            {
+                "title": "Planing",
+                "start": "2025-06-29T16:10:41",
+                "stop": "2025-06-29T16:20:12",
+                "duration_seconds": 571
+            },
+            {
+                "title": "Planing",
+                "start": "2025-06-29T18:32:35",
+                "stop": "2025-06-29T19:10:57",
+                "duration_seconds": 2302
+            },
+            {
+                "title": "Planing",
+                "start": "2025-06-30T15:31:09",
+                "stop": "2025-06-30T15:45:29",
+                "duration_seconds": 860
+            },
+            {
+                "title": "Coding",
+                "start": "2025-06-30T15:45:29",
+                "stop": "2025-06-30T16:12:40",
+                "duration_seconds": 1631
+            },
+            {
+                "title": "Coding",
+                "start": "2025-06-30T16:14:51",
+                "stop": "2025-06-30T16:25:39",
+                "duration_seconds": 648
+            },
+            {
+                "title": "Coding",
+                "start": "2025-06-30T22:38:29",
+                "stop": "2025-07-01T00:05:34",
+                "duration_seconds": 5225
+            },
+            {
+                "title": "Coding",
+                "start": "2025-07-01T16:43:21",
+                "stop": "2025-07-01T18:00:15",
+                "duration_seconds": 4614
+            },
+            {
+                "title": "Coding",
+                "start": "2025-07-01T22:46:53",
+                "stop": "2025-07-01T23:17:14",
+                "duration_seconds": 1821
+            },
+            {
+                "title": "Coding",
+                "start": "2025-07-02T15:01:55",
+                "stop": "2025-07-02T16:10:37",
+                "duration_seconds": 4122
+            },
+            {
+                "title": "Coding",
+                "start": "2025-07-02T21:34:08",
+                "stop": "2025-07-02T22:53:43",
+                "duration_seconds": 4775
+            },
+            {
+                "title": "Coding",
+                "start": "2025-07-02T22:57:47",
+                "stop": "2025-07-02T23:29:58",
+                "duration_seconds": 1931
+            },
+            {
+                "title": "Coding",
+                "start": "2025-07-03T13:12:51",
+                "stop": "2025-07-03T14:06:34",
+                "duration_seconds": 3223
+            },
+            {
+                "title": "Coding",
+                "start": "2025-07-03T16:11:20",
+                "stop": "2025-07-03T16:26:02",
+                "duration_seconds": 882
+            },
+            {
+                "title": "Coding",
+                "start": "2025-07-03T23:22:52",
+                "stop": "2025-07-04T01:05:28",
+                "duration_seconds": 6156
+            },
+            {
+                "title": "Coding",
+                "start": "2025-07-05T15:24:33",
+                "stop": "2025-07-05T17:55:52",
+                "duration_seconds": 9079
+            },
+            {
+                "title": "Coding",
+                "start": "2025-07-06T16:19:34",
+                "stop": "2025-07-06T17:13:27",
+                "duration_seconds": 3233
+            },
+            {
+                "title": "Coding",
+                "start": "2025-07-06T17:36:40",
+                "stop": "2025-07-06T17:37:19",
+                "duration_seconds": 39
+            },
+            {
+                "title": "Coding",
+                "start": "2025-07-06T18:04:03",
+                "stop": "2025-07-06T18:30:12",
+                "duration_seconds": 1569
+            },
+            {
+                "title": "Coding",
+                "start": "2025-07-07T10:53:54",
+                "stop": "2025-07-07T11:57:00",
+                "duration_seconds": 3786
+            },
+            {
+                "title": "Coding",
+                "start": "2025-07-07T23:09:12",
+                "stop": "2025-07-08T00:12:03",
+                "duration_seconds": 3771
+            }
+        ],
+        "total_time": 97263,
+        "archived": false
+    },
+    {
+        "id": 7,
+        "name": "Minecraft",
+        "pomodoro": {
+            "cycles": 4,
+            "work_time": 25,
+            "break_time": 5
+        },
+        "sessions": [
+            {
+                "title": "Mattie's Game",
+                "start": "2025-07-06T17:16:38",
+                "stop": "2025-07-06T17:17:54",
+                "duration_seconds": 76
+            },
+            {
+                "title": "Mattie's Game",
+                "start": "2025-07-06T17:28:34",
+                "stop": "2025-07-06T17:37:47",
+                "duration_seconds": 553
+            },
+            {
+                "title": "Mattie's Game",
+                "start": "2025-07-06T18:04:03",
+                "stop": "2025-07-06T18:29:59",
+                "duration_seconds": 1556
+            }
+        ],
+        "total_time": 2185,
+        "archived": false
+    },
+    {
+        "id": 8,
+        "name": "BCOMP Work",
+        "pomodoro": {
+            "cycles": 4,
+            "work_time": 25,
+            "break_time": 5
+        },
+        "sessions": [
+            {
+                "title": "PRG381 Slides",
+                "start": "2025-07-09T10:19:01",
+                "stop": "2025-07-09T11:16:15",
+                "duration_seconds": 3434
+            },
+            {
+                "title": "PRG381 Slides",
+                "start": "2025-07-09T11:23:26",
+                "stop": "2025-07-09T12:02:06",
+                "duration_seconds": 2320
+            },
+            {
+                "title": "PRG381 Slides",
+                "start": "2025-07-09T23:26:07",
+                "stop": "2025-07-10T00:02:14",
+                "duration_seconds": 2167
+            },
+            {
+                "title": "PRG381 Slides",
+                "start": "2025-07-10T10:31:09",
+                "stop": "2025-07-10T11:58:29",
+                "duration_seconds": 5240
+            },
+            {
+                "title": "PRG381 Project",
+                "start": "2025-07-10T19:48:32",
+                "stop": "2025-07-10T20:14:12",
+                "duration_seconds": 1540
+            },
+            {
+                "title": "PRG381 Project",
+                "start": "2025-07-10T21:52:52",
+                "stop": "2025-07-10T22:05:31",
+                "duration_seconds": 759
+            },
+            {
+                "title": "PRG381 Slides",
+                "start": "2025-07-10T22:05:31",
+                "stop": "2025-07-10T23:01:28",
+                "duration_seconds": 3357
+            },
+            {
+                "title": "PRG381 Slides",
+                "start": "2025-07-11T07:45:09",
+                "stop": "2025-07-11T09:01:19",
+                "duration_seconds": 4570
+            },
+            {
+                "title": "PRG381 Slides",
+                "start": "2025-07-11T09:31:39",
+                "stop": "2025-07-11T12:05:44",
+                "duration_seconds": 9245
+            }
+        ],
+        "total_time": 32632,
         "archived": false
     }
 ]
