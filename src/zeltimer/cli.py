@@ -79,6 +79,19 @@ def status(timer_id):
             display_timer(t)
 
 @timer.command()
+def ls():
+    """Show a list of all timers"""
+    timer_manager.sync_state()
+    timers = timer_manager.load_timers()
+    
+    visible = [t for t in timers if not t.get("archived", False)]
+    if not visible:
+        click.echo("No active timers found.")
+        return
+    for t in visible:
+        click.echo(f"Timer {t['id']} - {t['name']}")
+
+@timer.command()
 @click.argument("timer_id", type=int)
 def pomoTest(timer_id):
     """Run Pomodoro test with the given timer ID"""
