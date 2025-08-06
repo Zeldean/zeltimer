@@ -56,7 +56,7 @@ def status(timer_id):
             else:
                 start = datetime.datetime.fromisoformat(session["start"])
                 dur = (datetime.datetime.now() - start).total_seconds()
-                live = " (running)"
+                live = "\n└── (running)"
                 total_seconds += dur
 
             click.echo(f"├── {session['title']} - {utils.timeBreakdown(dur)}{live}")
