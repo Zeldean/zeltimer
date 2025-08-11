@@ -27,6 +27,7 @@ build/
 *.cache.json
 
 # Local state or override paths
+.python-version
 paths.json
 paths.pkl
 
